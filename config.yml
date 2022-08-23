@@ -1,0 +1,40 @@
+log_dir: snapshot
+
+dataset:
+    dataloader_settings:
+        train:
+            batch_size: 16
+            drop_remainder: True
+            shuffle: True
+            num_parallel_calls: 16
+        val:
+            batch_size: 1
+    data_dir: /data/dataset/aim22/reds/
+    degradation: sharp_bicubic
+    train_frame_num: 10
+    test_frame_num: 100
+    crop_size: 64
+
+model:
+    path: model/mobile_rrn.py
+    name: MobileRRN
+
+learner:
+    general:
+        total_steps: 250000
+        log_train_info_steps: 100
+        keep_ckpt_steps: 2000
+        valid_steps: 1000
+
+    optimizer:
+        name: Adam
+        beta_1: 0.9
+        beta_2: 0.999
+
+    lr_scheduler:
+        name: PiecewiseConstantDecay
+        boundaries: [40000, 100000, 150000, 200000]
+        values: [0.001, 0.0005, 0.00025, 0.0001, 0.0005]
+
+    saver:
+        restore_ckpt: snapshot/ckpt-98
