@@ -1,6 +1,5 @@
 # Sliding Window Recurrent Network for Efficient Video Super-Resolution
 
-
 ### Requirements
 
 - Python: 3.6, 3.7
@@ -8,7 +7,9 @@
 - [TensorFlow >= 2.6.0](https://www.tensorflow.org/install/) + [CUDA cuDNN](https://developer.nvidia.com/cudnn)
 - GPU for training (e.g., Nvidia GeForce RTX 2080)
 
+### Overview Figure
 
+![avatar](figs/ov.png)
 
 ### Dataset preparation
 
