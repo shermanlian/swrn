@@ -57,3 +57,15 @@ To convert the keras model to tflite, use the following command:
 python convert.py --model_path model/mobile_rrn.py --model_name MobileRRN --input_shapes 1,320,180,9:1,320,180,32 --ckpt_path snapshot/ckpt-98 --output_tflite tflite/model.tflite
 ```
 
+## Citations
+If our code helps your research or work, please consider citing our paper.
+```
+@article{lian2022sliding,
+  title={Sliding Window Recurrent Network for Efficient Video Super-Resolution},
+  author={Lian, Wenyi and Lian, Wenjing},
+  journal={arXiv preprint arXiv:2208.11608},
+  year={2022}
+}
+```
+
+
